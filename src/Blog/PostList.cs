@@ -25,9 +25,14 @@ namespace Blog
             ),
             new PostData(
                 CONTENT_BASE_PATH + "creating-markdown-blog-in-blazor.md",
-                "Creating static website using blazor and azure",
+                "Creating a markdown blog in blazor",
                 new DateTime(2019, 6, 16, 3, 9, 0, DateTimeKind.Utc)
-            )
+            ),
+            new PostData(
+                CONTENT_BASE_PATH + "create-pwa-with-blazor.md",
+                "Transform a blazor app into a PWA",
+                new DateTime(2019, 6, 16, 18, 37, 0, DateTimeKind.Utc)
+            ),
         };
 
     }
