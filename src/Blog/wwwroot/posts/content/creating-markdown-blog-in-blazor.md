@@ -10,5 +10,7 @@
 
 
 
-  References:
+  References/Notes:
   https://www.telerik.com/blogs/blazedown-experiment-with-markdown-and-blazor
+  https://github.com/aspnet/Blazor/pull/1146/files#diff-0a1a9a2202c82156228acbfecab64aa2R25
+  https://learn-blazor.com/architecture/rest-api/ (Not accurate.. needing to remove "/")
