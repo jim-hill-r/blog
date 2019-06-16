@@ -6,3 +6,9 @@
   - **Hurdle overcome**: How to get raw html to render in Blazor
 - How to read static markdown via http calls
   -  **Hurdle overcome**: How a "/" is not working in Blazor preview 6.
+
+
+
+
+  References:
+  https://www.telerik.com/blogs/blazedown-experiment-with-markdown-and-blazor
