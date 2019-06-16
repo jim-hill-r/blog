@@ -1,6 +1,22 @@
-﻿@page "/"
+﻿@using Blog.Model;
+
+@page "/"
 @page "/index.html"
 
-<h1>Hello, world!</h1>
+<h1>Jim Hill's Blog</h1>
 
-Welcome to your new app.
+
+
+@foreach (var post in _posts)
+{
+    <PostComponent Post="@post"></PostComponent>
+}
+
+@functions {
+    private IList<PostData> _posts { get; set; }
+
+    protected override void OnInit()
+    {
+        this._posts = PostList.GetMostRecentPosts(5);
+    }
+}

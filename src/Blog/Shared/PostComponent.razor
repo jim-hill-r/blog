@@ -1,0 +1,36 @@
+@using Markdig;
+@using Blog.Model;
+
+@inject HttpClient Http
+
+<div>
+    @((MarkupString)_htmlContent)
+</div>
+
+@functions{
+
+    [Parameter] PostData Post { get; set; }
+    private string _htmlContent = "";
+
+    protected override async Task OnInitAsync()
+    {
+        Console.WriteLine(Post.ContentPath);
+        try
+        {
+            string mdContent = await Http.GetStringAsync(Post.ContentPath);
+            _htmlContent = RenderHtmlContent(mdContent);
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+    }
+
+    private string RenderHtmlContent(string value)
+    {
+        return Markdig.Markdown.ToHtml(
+          markdown: value,
+          pipeline: new MarkdownPipelineBuilder().UseAdvancedExtensions().Build()
+        );
+    }
+}
